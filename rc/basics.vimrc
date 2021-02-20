@@ -62,3 +62,28 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+function! SudoWrite()
+    w !sudo tee % > /dev/null
+endfunction
+
+function! SudoWriteAndReopen()
+    call SudoWrite()
+    e!
+    call feedkeys("\<CR>")
+endfunction
+
+function! SudoWriteQuit()
+    call SudoWriteAndReopen()
+    q
+endfunction
+
+function! SudoWriteNext()
+    call SudoWriteAndReopen()
+    n
+endfunction
+
+" Allow sudo-writing via :Sw, :Swq, :Swn
+command! -nargs=0 Sw call SudoWriteAndReopen()
+command! -nargs=0 Swq call SudoWriteQuit()
+command! -nargs=0 Swn call SudoWriteNext()
