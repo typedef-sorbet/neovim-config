@@ -87,3 +87,23 @@ endfunction
 command! -nargs=0 Sw call SudoWriteAndReopen()
 command! -nargs=0 Swq call SudoWriteQuit()
 command! -nargs=0 Swn call SudoWriteNext()
+
+" Switch tab-completion arrow keys to do breadth on up/down, depth on
+" left/right
+set wildcharm=<C-Z>
+cnoremap <expr> <up> wildmenumode() ? "\<left>" : "\<up>"
+cnoremap <expr> <down> wildmenumode() ? "\<right>" : "\<down>"
+cnoremap <expr> <left> wildmenumode() ? "\<up>" : "\<left>"
+cnoremap <expr> <right> wildmenumode() ? " \<bs>\<C-Z>" : "\<right>"
+
+" Allow code-folding on indentation
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
+" Use Space for toggling folds
+nnoremap <silent> <Space> za
+
+" Use c for toggling checkboxes in Markdown
+nnoremap <C-x> <leader>tt

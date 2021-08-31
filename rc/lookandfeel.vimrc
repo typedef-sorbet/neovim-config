@@ -4,3 +4,5 @@ set termguicolors
 let g:lightline = { 'colorscheme': 'darcula' }
 set noshowmode
 set shortmess+=F
+
+let $COLORTERM = 'truecolor'
