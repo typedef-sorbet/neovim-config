@@ -8,8 +8,42 @@ set smarttab
 set number			" Show line numbers
 set mouse=a			" Enable mouse for scrolling
 set backspace=indent,eol,start	" This is probably already taken care of, but whatever
+set relativenumber
+set nowrap
+set listchars=trail:•
+set scrolloff=10
+set sidescrolloff=10
+set splitright
+set clipboard+=unnamedplus
+set confirm
+
+" Leader remap
+
+let mapleader="\<space>"
 
 " Hotkeys
+
+" Maps stolen from Jess Archer's wonderful Vimconf 2021 talk (https://www.youtube.com/watch?v=434tljD-5C8)
+
+" Open the current file in the default program
+nnoremap <leader>x :!xdg-open %<cr><cr>
+
+" Allow gf to open non-existent files
+map gf :edit <cfile><CR>
+
+" Now, back to my own creations...
+
+" Re-source config
+nnoremap <leader>vs :source ~/.config/nvim/init.vim<CR>
+
+" Edit config in new split (opens file browser in rc directory)
+nnoremap <leader>ve :vsplit <bar> :edit ~/.config/nvim/rc<CR>
+
+" Edit plugin config in new split
+nnoremap <leader>vpe :vsplit <bar> :edit ~/.config/nvim/rc/vundle.vimrc<CR>
+
+" Install plugins
+nnoremap <leader>vpi :PluginInstall<CR>
 
 " Tab Navigation
 nnoremap <S-Right> :tabn<CR>
@@ -101,9 +135,6 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
-
-" Use Space for toggling folds
-nnoremap <silent> <Space> za
 
 " Use c for toggling checkboxes in Markdown
 nnoremap <C-x> <leader>tt

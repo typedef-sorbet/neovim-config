@@ -10,9 +10,13 @@ Plugin 'VundleVim/Vundle.vim'	" Let Vundle manage Vundle, required
 " Functionality Plugins
 Plugin 'vifm/vifm.vim'
 Plugin 'preservim/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Look-and-Feelers
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'doums/darcula'
 Plugin 'dracula/vim'
 
@@ -42,6 +46,12 @@ Plugin 'glench/vim-jinja2-syntax'
 
 " Checkbox plugin for Markdown
 Plugin 'jkramer/vim-checkbox'
+
+" Smooth Scrolling (might delete later idk)
+Plugin 'psliwka/vim-smoothie'
+
+" Kitty config file highlighting
+Plugin 'fladson/vim-kitty'
 
 " End Plugins
 call vundle#end()
