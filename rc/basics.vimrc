@@ -57,7 +57,10 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-S-s> :wa<CR>
 
 " Set Shift-Tab to de-indent
-inoremap <S-Tab> <C-d>
+inoremap <S-Tab> <Home><Esc>v<End><S-,>i
+
+" Set <leader>jj to format JSON
+nnoremap <leader>jj :%!python -m json.tool<CR>
 
 " Bracket auto-closing
 " inoremap " ""<left>
