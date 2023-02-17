@@ -53,6 +53,12 @@ Plugin 'psliwka/vim-smoothie'
 " Kitty config file highlighting
 Plugin 'fladson/vim-kitty'
 
+" LazyGit
+Plugin 'kdheepak/lazygit.nvim'
+
+" LaTeX
+Plugin 'lervag/vimtex'
+
 " End Plugins
 call vundle#end()
 filetype plugin indent on
