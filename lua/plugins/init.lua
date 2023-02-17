@@ -194,6 +194,9 @@ local plugins = {
   -- Customs
   ['psliwka/vim-smoothie'] = {},
   ['folke/todo-comments.nvim'] = {
+    config = function()
+      require "custom.plugins.todo-comments"
+    end
   },
 
   -- Only load whichkey after all the gui
